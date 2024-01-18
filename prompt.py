@@ -33,26 +33,6 @@ ls_past_history= """                                                       #Prev
 """
 ls_diagnosis = "小儿支气管炎、小儿发热、小儿腹泻、上呼吸道感染、小儿消化不良、小儿感冒、小儿咳嗽、新生儿黄疸、小儿便秘、小儿支气管肺炎等。"  #Pediatric bronchitis, pediatric fever, pediatric diarrhea, upper respiratory infection, pediatric indigestion, pediatric common cold, pediatric cough,neonatal jaundice, pediatric constipation, pediatric bronchopneumonia, etc.             
 
-
-
-
-
-
-
-def get_summary_prompt_T(ls_dialog, temp=0.1,top1=1.0):     # Techical Type
-    prompt = f"""
-    任务:根据医患对话{ls_dialog}生成一段简短的医学摘要，包含以下六个部分：               # Generate a short medical summary based on the doctor-patient conversation {ls_dialog} with the following six parts:
-    主诉:不超过20字，包括以症状{ls_symptom}为例，根据医患对话生成症状，症状天数。        # Chief complaint: Not exceeding 20 words, including the symptom {ls_symptom} as an example, according to the doctor-patient dialogue to generate symptoms, symptoms of the number of days. 
-    现病史:不超过80字，生成相关的现病史,以{ls_pre_history}为例。                       # Present medical history: Not exceeding 80 words, generate related history of disease, {ls_pre_history} as an example.
-    辅助检查:生成最相关的医学检查名称,以{ls_aux_test}为例。                            # Auxiliary examination: Generate the most relevant medical examination name, using {ls_aux_test} as an example.
-    既往史:不超过50字，生成相关的既往史,以{ls_past_history}为例。                      # Past medical history: Not exceeding 50 characters to generate the relevant Past medical history, for example, {ls_past_history}.
-    诊断:生成一个最相关的诊断名称,以{ls_diagnosis}为例。                               # Diagnostics: Generates the most relevant diagnosis name, for example, {ls_diagnosis}.
-    建议:不超过80字,生成所有建议。                                                    # Recommendation: Not exceeding 80 words, generate all recommendations.
-    """
-    response = get_completion(prompt,temperature=temp,top_p=top1)
-    return response
-
-
 def get_summary_prompt_S(ls_dialog, temp=0.1,top1=0.1):  # Simple Type
     prompt = f"""
     1.根据医疗对话{ls_dialog}生成一段简短的医学摘要.           # 1.Generate a short medical summary based on the medical dialogue{ls_dialog}.
@@ -63,6 +43,19 @@ def get_summary_prompt_S(ls_dialog, temp=0.1,top1=0.1):  # Simple Type
     既往史:                                                  # Past medical history: 
     诊断:最相关的诊断名称                                     # Diagnostics: The most relevant diagnostic name
     建议:                                                    # Recommendation: 
+    """
+    response = get_completion(prompt,temperature=temp,top_p=top1)
+    return response
+
+def get_summary_prompt_T(ls_dialog, temp=0.1,top1=1.0):     # Techical Type
+    prompt = f"""
+    任务:根据医患对话{ls_dialog}生成一段简短的医学摘要，包含以下六个部分：               # Generate a short medical summary based on the doctor-patient conversation {ls_dialog} with the following six parts:
+    主诉:不超过20字，包括以症状{ls_symptom}为例，根据医患对话生成症状，症状天数。        # Chief complaint: Not exceeding 20 words, including the symptom {ls_symptom} as an example, according to the doctor-patient dialogue to generate symptoms, symptoms of the number of days. 
+    现病史:不超过80字，生成相关的现病史,以{ls_pre_history}为例。                       # Present medical history: Not exceeding 80 words, generate related history of disease, {ls_pre_history} as an example.
+    辅助检查:生成最相关的医学检查名称,以{ls_aux_test}为例。                            # Auxiliary examination: Generate the most relevant medical examination name, using {ls_aux_test} as an example.
+    既往史:不超过50字，生成相关的既往史,以{ls_past_history}为例。                      # Past medical history: Not exceeding 50 characters to generate the relevant Past medical history, for example, {ls_past_history}.
+    诊断:生成一个最相关的诊断名称,以{ls_diagnosis}为例。                               # Diagnostics: Generates the most relevant diagnosis name, for example, {ls_diagnosis}.
+    建议:不超过80字,生成所有建议。                                                    # Recommendation: Not exceeding 80 words, generate all recommendations.
     """
     response = get_completion(prompt,temperature=temp,top_p=top1)
     return response
@@ -216,11 +209,11 @@ with open(json_file,encoding="utf-8") as f:
         ls_dialogue_str = ''
         for i in ls_utterance:
             ls_dialogue_str = ls_dialogue_str + ' ' + ' '.join(i)
-
+            
         ls_return = ''
+        # ls_return = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)           # simple type
         ls_return = get_summary_prompt_T(ls_dialogue_str, 0.1, 0.1)              # technical type
-        # ls_summary = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)           # simple type
-
+        
         ls_temp = []
         ls_temp.append('highlight')
         ls_temp.append(ls_return)
