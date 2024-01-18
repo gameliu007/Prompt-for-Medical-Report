@@ -1,0 +1,1303 @@
+{
+    "10301581": {
+        "diagnosis": "小儿消化不良",
+        "self_report": "白天不咳嗽。晚上睡着了就咳嗽。磨牙。还哼哼",
+        "explicit_info": {
+            "Symptom": [
+                "咳嗽"
+            ]
+        },
+        "dialogue": [
+            {
+                "sentence_id": "1",
+                "speaker": "医生",
+                "sentence": "你好，咳嗽是连声咳吗？有痰吗？有没流鼻涕，鼻塞？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom O O O B-Symptom O O O B-Symptom O O O O B-Symptom I-Symptom I-Symptom O B-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "咳嗽",
+                    "咳嗽",
+                    "痰",
+                    "鼻流涕",
+                    "鼻塞"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1",
+                    "0",
+                    "2",
+                    "0"
+                ],
+                "local_implicit_info": {
+                    "咳嗽": "1",
+                    "痰": "0",
+                    "鼻流涕": "2",
+                    "鼻塞": "0"
+                }
+            },
+            {
+                "sentence_id": "2",
+                "speaker": "医生",
+                "sentence": "咳嗽有几天了？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "B-Symptom I-Symptom O O O O O",
+                "symptom_norm": [
+                    "咳嗽"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "咳嗽": "1"
+                }
+            },
+            {
+                "sentence_id": "3",
+                "speaker": "医生",
+                "sentence": "有发热过吗？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O B-Symptom I-Symptom O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "4",
+                "speaker": "患者",
+                "sentence": "有三天",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "5",
+                "speaker": "患者",
+                "sentence": "没发烧，也没痰鼻塞",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O B-Symptom I-Symptom O O O B-Symptom B-Symptom I-Symptom",
+                "symptom_norm": [
+                    "发热",
+                    "痰",
+                    "鼻塞"
+                ],
+                "symptom_type": [
+                    "1",
+                    "0",
+                    "0"
+                ],
+                "local_implicit_info": {
+                    "发热": "1",
+                    "痰": "0",
+                    "鼻塞": "0"
+                }
+            },
+            {
+                "sentence_id": "6",
+                "speaker": "医生",
+                "sentence": "以前有气喘吗？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom O O",
+                "symptom_norm": [
+                    "气喘"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "气喘": "1"
+                }
+            },
+            {
+                "sentence_id": "7",
+                "speaker": "医生",
+                "sentence": "有没什么过敏？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O B-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "过敏"
+                ],
+                "symptom_type": [
+                    "0"
+                ],
+                "local_implicit_info": {
+                    "过敏": "0"
+                }
+            },
+            {
+                "sentence_id": "8",
+                "speaker": "患者",
+                "sentence": "没有",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "9",
+                "speaker": "医生",
+                "sentence": "大便怎么样？干不干？胃口怎么样？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "10",
+                "speaker": "患者",
+                "sentence": "大便经常干'胃口很好",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom O O O O O",
+                "symptom_norm": [
+                    "大便干燥"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "大便干燥": "1"
+                }
+            },
+            {
+                "sentence_id": "11",
+                "speaker": "医生",
+                "sentence": "可能有点积食",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O B-Symptom I-Symptom",
+                "symptom_norm": [
+                    "积食"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "积食": "1"
+                }
+            },
+            {
+                "sentence_id": "12",
+                "speaker": "患者",
+                "sentence": "那该总么办",
+                "dialogue_act": "Request-Medical_Advice",
+                "BIO_label": "O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "13",
+                "speaker": "医生",
+                "sentence": "磨牙，晚上翻来覆去，大便干，吃的多，很容易积食",
+                "dialogue_act": "Inform-Etiology",
+                "BIO_label": "B-Symptom I-Symptom O O O O O O O O B-Symptom I-Symptom I-Symptom O O O O O O O O B-Symptom I-Symptom",
+                "symptom_norm": [
+                    "磨牙症",
+                    "大便干燥",
+                    "积食"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "磨牙症": "1",
+                    "大便干燥": "1",
+                    "积食": "1"
+                }
+            },
+            {
+                "sentence_id": "14",
+                "speaker": "医生",
+                "sentence": "现在可以吃点小儿消积止咳口服液",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O B-Drug I-Drug I-Drug I-Drug I-Drug I-Drug I-Drug I-Drug I-Drug",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "15",
+                "speaker": "医生",
+                "sentence": "如果没有这个，可以吃点健儿清解液，小儿消食颗粒",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O B-Drug I-Drug I-Drug I-Drug I-Drug O B-Drug I-Drug I-Drug I-Drug I-Drug I-Drug",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "16",
+                "speaker": "医生",
+                "sentence": "益生菌也可以吃点。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "B-Drug_Category I-Drug_Category I-Drug_Category O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "17",
+                "speaker": "患者",
+                "sentence": "好的，谢谢",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "18",
+                "speaker": "医生",
+                "sentence": "如果口服药物3天不见好，那么要去医院，化验血常规",
+                "dialogue_act": "Inform-Medical_Advice",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O B-Medical_Examination I-Medical_Examination I-Medical_Examination",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "19",
+                "speaker": "医生",
+                "sentence": "因为积食很容易出现细菌感染",
+                "dialogue_act": "Inform-Etiology",
+                "BIO_label": "O O B-Symptom I-Symptom O O O O O B-Symptom I-Symptom I-Symptom I-Symptom",
+                "symptom_norm": [
+                    "积食",
+                    "细菌感染"
+                ],
+                "symptom_type": [
+                    "1",
+                    "2"
+                ],
+                "local_implicit_info": {
+                    "积食": "1",
+                    "细菌感染": "2"
+                }
+            },
+            {
+                "sentence_id": "20",
+                "speaker": "患者",
+                "sentence": "知道了，谢谢",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "21",
+                "speaker": "医生",
+                "sentence": "如果有细菌感染，就要吃点消炎药",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O B-Symptom I-Symptom I-Symptom I-Symptom O O O O O B-Drug_Category I-Drug_Category I-Drug_Category",
+                "symptom_norm": [
+                    "细菌感染"
+                ],
+                "symptom_type": [
+                    "2"
+                ],
+                "local_implicit_info": {
+                    "细菌感染": "2"
+                }
+            },
+            {
+                "sentence_id": "22",
+                "speaker": "医生",
+                "sentence": "不客气",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "23",
+                "speaker": "医生",
+                "sentence": "很高兴为您提供咨询服务，祝宝宝快乐健康成长！",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            }
+        ],
+        "report": [
+            {
+                "主诉": "晚上咳嗽，磨牙。",
+                "现病史": "患儿夜间咳嗽三天，磨牙，大便干。未服用药物。",
+                "辅助检查": "暂缺。",
+                "既往史": "不详。",
+                "诊断": "消化不良。",
+                "建议": "小儿消积止咳口服液，益生菌，到医院化验血常规。"
+            },
+            {
+                "主诉": "咳嗽、磨牙3天。",
+                "现病史": "患儿3天前出现夜间咳嗽、磨牙，无发热、咳痰、流涕等症状，未诊治。",
+                "辅助检查": "暂缺。",
+                "既往史": "否认过敏史。",
+                "诊断": "考虑消化不良。",
+                "建议": "口服消积止咳药物3天，若无好转需查血常规。"
+            }
+        ],
+        "implicit_info": {
+            "Symptom": {
+                "咳嗽": "1",
+                "痰": "0",
+                "鼻流涕": "2",
+                "鼻塞": "0",
+                "发热": "1",
+                "气喘": "1",
+                "过敏": "0",
+                "大便干燥": "1",
+                "积食": "1",
+                "磨牙症": "1",
+                "细菌感染": "2"
+            }
+        }
+    },
+    "10190259": {
+        "diagnosis": "上呼吸道感染",
+        "self_report": "5岁男孩发烧咳嗽。吃了美林退烧和百蕊颗粒还有抗病毒的利巴韦林。一个星期了。今天有改善。发烧的时候手脚不凉了变热乎了。但是从早上起来就食欲不好。早上呕吐两次。晚上又吐了一次。这几天他也时不时喊着肚子疼。这是什么情况？今天一天相当于没吃几口饭。精神倒还不错。没有像前几天因为发烧就迷糊地睡觉。",
+        "explicit_info": {
+            "Symptom": [
+                "发热",
+                "咳嗽",
+                "食欲不振",
+                "呕吐",
+                "腹痛"
+            ]
+        },
+        "dialogue": [
+            {
+                "sentence_id": "1",
+                "speaker": "医生",
+                "sentence": "你好，很高兴能够帮助您。",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "2",
+                "speaker": "患者",
+                "sentence": "您好",
+                "dialogue_act": "Other",
+                "BIO_label": "O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "3",
+                "speaker": "医生",
+                "sentence": "目前宝宝还烧到多少度？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O B-Symptom O O O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "4",
+                "speaker": "患者",
+                "sentence": "正在量。今天一直是38度左右。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O B-Symptom I-Symptom I-Symptom O O O",
+                "symptom_norm": [
+                    "低热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "低热": "1"
+                }
+            },
+            {
+                "sentence_id": "5",
+                "speaker": "患者",
+                "sentence": "前几天都烧到39度多",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom",
+                "symptom_norm": [
+                    "高热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "高热": "1"
+                }
+            },
+            {
+                "sentence_id": "6",
+                "speaker": "医生",
+                "sentence": "好的。宝宝之前发烧多少度？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O O B-Symptom I-Symptom O O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "7",
+                "speaker": "医生",
+                "sentence": "哦",
+                "dialogue_act": "Other",
+                "BIO_label": "O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "8",
+                "speaker": "医生",
+                "sentence": "那体温高峰是明显下降了。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "9",
+                "speaker": "患者",
+                "sentence": "他肚子疼和呕吐跟发烧有关系吗",
+                "dialogue_act": "Request-Etiology",
+                "BIO_label": "O B-Symptom I-Symptom I-Symptom O B-Symptom I-Symptom O B-Symptom I-Symptom O O O O",
+                "symptom_norm": [
+                    "腹痛",
+                    "呕吐",
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "腹痛": "1",
+                    "呕吐": "1",
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "10",
+                "speaker": "患者",
+                "sentence": "今天明显是好转了",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "11",
+                "speaker": "医生",
+                "sentence": "考虑有关系的",
+                "dialogue_act": "Inform-Etiology",
+                "BIO_label": "O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "12",
+                "speaker": "患者",
+                "sentence": "早上起来就手脚发热。虽然也烧但是不喊着冷了。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O B-Symptom O O O O O O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "13",
+                "speaker": "患者",
+                "sentence": "咳嗽也有好转。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "B-Symptom I-Symptom O O O O O",
+                "symptom_norm": [
+                    "咳嗽"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "咳嗽": "1"
+                }
+            },
+            {
+                "sentence_id": "14",
+                "speaker": "医生",
+                "sentence": "嗯，就呕吐是今天开始的吗？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom O O O O O O O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "15",
+                "speaker": "患者",
+                "sentence": "我从昨天开始把百蕊颗粒给他加量了。",
+                "dialogue_act": "Inform-Existing_Examination_and_Treatment",
+                "BIO_label": "O O O O O O O B-Drug I-Drug I-Drug I-Drug O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "16",
+                "speaker": "患者",
+                "sentence": "呕吐今早上开始的。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "B-Symptom I-Symptom O O O O O O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "17",
+                "speaker": "医生",
+                "sentence": "加量建议也要在说明书范围以内。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "18",
+                "speaker": "患者",
+                "sentence": "早饭不想吃。逼着他喝了点粥吃了块馒头。吃完就吐了。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O B-Symptom O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "19",
+                "speaker": "医生",
+                "sentence": "您能不能看到他的嗓子。有没有红肿有没有白点。有没有起泡？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "23",
+                "speaker": "患者",
+                "sentence": "好像没有。就是舌苔特别厚",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "24",
+                "speaker": "医生",
+                "sentence": "嗯，看不见咽喉部位以及扁桃体。被舌头挡住了。",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "25",
+                "speaker": "医生",
+                "sentence": "是的。",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "26",
+                "speaker": "患者",
+                "sentence": "现在体温是38.5",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom",
+                "symptom_norm": [
+                    "中等度热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "中等度热": "1"
+                }
+            },
+            {
+                "sentence_id": "27",
+                "speaker": "医生",
+                "sentence": "什么时候吃的退烧药？",
+                "dialogue_act": "Request-Existing_Examination_and_Treatment",
+                "BIO_label": "O O O O O O B-Drug_Category I-Drug_Category I-Drug_Category O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "28",
+                "speaker": "患者",
+                "sentence": "昨天晚上九点多吃的。到现在一直没吃",
+                "dialogue_act": "Inform-Existing_Examination_and_Treatment",
+                "BIO_label": "O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "29",
+                "speaker": "医生",
+                "sentence": "嗯，就是今天白天一直没发烧吗？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O O O O O O B-Symptom I-Symptom O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "30",
+                "speaker": "患者",
+                "sentence": "他这正好是第七天了吃了整整一大瓶美林了。我看他精神好就没给吃。今天一直物理降温",
+                "dialogue_act": "Inform-Existing_Examination_and_Treatment",
+                "BIO_label": "O O O O O O O O O O O O O O O O B-Drug I-Drug O O O O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "31",
+                "speaker": "医生",
+                "sentence": "现在这个体温需要吃一次。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "32",
+                "speaker": "患者",
+                "sentence": "一直发烧",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O B-Symptom I-Symptom",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "33",
+                "speaker": "医生",
+                "sentence": "那白天量体温在多少？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "34",
+                "speaker": "患者",
+                "sentence": "最低也是38度。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O B-Symptom I-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "中等度热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "中等度热": "1"
+                }
+            },
+            {
+                "sentence_id": "35",
+                "speaker": "医生",
+                "sentence": "嗯，一般38度5以下可以物理降温，超过38度5建议用药物。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom O O O O O O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom O O O O O O",
+                "symptom_norm": [
+                    "低热",
+                    "中等度热"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "低热": "1",
+                    "中等度热": "1"
+                }
+            },
+            {
+                "sentence_id": "36",
+                "speaker": "患者",
+                "sentence": "待会睡觉我给他吃上。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "37",
+                "speaker": "医生",
+                "sentence": "好的，密切监测体温。然后看看宝宝有没有出汗。",
+                "dialogue_act": "Inform-Medical_Advice",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O B-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "出汗"
+                ],
+                "symptom_type": [
+                    "2"
+                ],
+                "local_implicit_info": {
+                    "出汗": "2"
+                }
+            },
+            {
+                "sentence_id": "38",
+                "speaker": "患者",
+                "sentence": "这几天他都偶尔肚子疼",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O B-Symptom I-Symptom I-Symptom",
+                "symptom_norm": [
+                    "腹痛"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "腹痛": "1"
+                }
+            },
+            {
+                "sentence_id": "39",
+                "speaker": "患者",
+                "sentence": "前几天大便干燥。昨天还正常。今天没便。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom I-Symptom I-Symptom O O O O O O O O O O O O",
+                "symptom_norm": [
+                    "大便干燥"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "大便干燥": "1"
+                }
+            },
+            {
+                "sentence_id": "40",
+                "speaker": "患者",
+                "sentence": "我在想总吃不进东西也不行",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "41",
+                "speaker": "医生",
+                "sentence": "嗯，蔬菜水果也不愿意吃是吧？",
+                "dialogue_act": "Request-Basic_Information",
+                "BIO_label": "O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "42",
+                "speaker": "患者",
+                "sentence": "不吃。",
+                "dialogue_act": "Inform-Basic_Information",
+                "BIO_label": "O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "43",
+                "speaker": "医生",
+                "sentence": "是的，从宝宝的血常规来看，考虑是由于病毒性感染导致的发热咳嗽。目前的处理也是对症的。",
+                "dialogue_act": "Diagnose",
+                "BIO_label": "O O O O O O O B-Medical_Examination I-Medical_Examination I-Medical_Examination O O O O O O O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom O O O B-Symptom I-Symptom B-Symptom I-Symptom O O O O O O O O O O O O",
+                "symptom_norm": [
+                    "病毒感染",
+                    "发热",
+                    "咳嗽"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "病毒感染": "1",
+                    "发热": "1",
+                    "咳嗽": "1"
+                }
+            },
+            {
+                "sentence_id": "44",
+                "speaker": "医生",
+                "sentence": "如果实在吃不下东西，嗯可以考虑输液。",
+                "dialogue_act": "Inform-Medical_Advice",
+                "BIO_label": "O O O O O O O O O O O O O O O B-Operation I-Operation O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "45",
+                "speaker": "患者",
+                "sentence": "他也吃。就是吃完吐。是不是不吃油",
+                "dialogue_act": "Request-Precautions",
+                "BIO_label": "O O O O O O O O B-Symptom O O O O O O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "46",
+                "speaker": "医生",
+                "sentence": "对最近饮食要清淡，他可能会有点厌油。",
+                "dialogue_act": "Inform-Precautions",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "47",
+                "speaker": "患者",
+                "sentence": "早上是吃了炒菜晚上吃了素炸丸子。都吐了。中午吃了面条就没事。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O O O O O B-Symptom O O O O O O O O O O O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "48",
+                "speaker": "患者",
+                "sentence": "前两天虽然也发烧但都是正常吃饭",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O B-Symptom I-Symptom O O O O O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "49",
+                "speaker": "医生",
+                "sentence": "嗯，暂时不要给他吃这种大油腻的。",
+                "dialogue_act": "Inform-Precautions",
+                "BIO_label": "O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "50",
+                "speaker": "患者",
+                "sentence": "他现在这情况有可能是肠胃病吗",
+                "dialogue_act": "Request-Etiology",
+                "BIO_label": "O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "51",
+                "speaker": "患者",
+                "sentence": "还需要再去医院化验吗",
+                "dialogue_act": "Request-Medical_Advice",
+                "BIO_label": "O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "52",
+                "speaker": "医生",
+                "sentence": "不像。考虑还是由于长期发热导致的",
+                "dialogue_act": "Inform-Etiology",
+                "BIO_label": "O O O O O O O O O O O B-Symptom I-Symptom O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "53",
+                "speaker": "医生",
+                "sentence": "这么长时间还不好。我建议您可以再给宝宝看一下血常规，看看白细胞高不高",
+                "dialogue_act": "Inform-Medical_Advice",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O B-Medical_Examination I-Medical_Examination I-Medical_Examination O O O B-Medical_Examination I-Medical_Examination I-Medical_Examination O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "54",
+                "speaker": "患者",
+                "sentence": "我看今天已经好转觉得快好了呢",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "55",
+                "speaker": "医生",
+                "sentence": "主要是宝宝不吃饭。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O O O B-Symptom I-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "食欲不振"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "食欲不振": "1"
+                }
+            },
+            {
+                "sentence_id": "56",
+                "speaker": "患者",
+                "sentence": "他要求喝水和喝粥。对别的都没兴趣。",
+                "dialogue_act": "Inform-Basic_Information",
+                "BIO_label": "O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "57",
+                "speaker": "医生",
+                "sentence": "要不您先给他用点不对油腻的东西吃看看，但是要注意补充维生素。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O O O O O B-Drug_Category I-Drug_Category I-Drug_Category O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "58",
+                "speaker": "患者",
+                "sentence": "嗯好。谢谢",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "59",
+                "speaker": "患者",
+                "sentence": "长期发烧这样情况导致的胃不舒服有什么办法调理吗",
+                "dialogue_act": "Request-Drug_Recommendation",
+                "BIO_label": "O O B-Symptom I-Symptom O O O O O O O O O O O O O O O O O O O",
+                "symptom_norm": [
+                    "发热"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1"
+                }
+            },
+            {
+                "sentence_id": "60",
+                "speaker": "医生",
+                "sentence": "就先饮食清淡一点。宝宝呕吐厉害，可以给他吃点小儿吗丁啉，促进胃肠蠕动消化。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O B-Symptom I-Symptom O O O O O O O O O O O B-Drug I-Drug I-Drug O O O O O O O O O O",
+                "symptom_norm": [
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1"
+                }
+            },
+            {
+                "sentence_id": "61",
+                "speaker": "医生",
+                "sentence": "您可以用，青菜汁来煮稀饭给他，这样既可以补充维生素，又清淡。",
+                "dialogue_act": "Inform-Precautions",
+                "BIO_label": "O O O O O O O O O O O O O O O O O O O O O O B-Drug_Category I-Drug_Category I-Drug_Category O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "62",
+                "speaker": "患者",
+                "sentence": "吐的还不算厉害。不像肠胃炎吐的那么厉害。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "B-Symptom O O O O O O O O O B-Symptom I-Symptom I-Symptom B-Symptom O O O O O O",
+                "symptom_norm": [
+                    "呕吐",
+                    "胃肠道炎症",
+                    "呕吐"
+                ],
+                "symptom_type": [
+                    "1",
+                    "0",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "呕吐": "1",
+                    "胃肠道炎症": "0"
+                }
+            },
+            {
+                "sentence_id": "63",
+                "speaker": "患者",
+                "sentence": "现在就肚脐眼周围疼。",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom I-Symptom I-Symptom I-Symptom I-Symptom O",
+                "symptom_norm": [
+                    "腹痛"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "腹痛": "1"
+                }
+            },
+            {
+                "sentence_id": "64",
+                "speaker": "医生",
+                "sentence": "嗯。只是偶尔痛吗？",
+                "dialogue_act": "Request-Symptom",
+                "BIO_label": "O O O O O O B-Symptom O O",
+                "symptom_norm": [
+                    "腹痛"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "腹痛": "1"
+                }
+            },
+            {
+                "sentence_id": "65",
+                "speaker": "患者",
+                "sentence": "嗯偶尔疼",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O B-Symptom",
+                "symptom_norm": [
+                    "腹痛"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "腹痛": "1"
+                }
+            },
+            {
+                "sentence_id": "66",
+                "speaker": "患者",
+                "sentence": "揉一揉放屁",
+                "dialogue_act": "Inform-Symptom",
+                "BIO_label": "O O O B-Symptom I-Symptom",
+                "symptom_norm": [
+                    "屁"
+                ],
+                "symptom_type": [
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "屁": "1"
+                }
+            },
+            {
+                "sentence_id": "67",
+                "speaker": "医生",
+                "sentence": "嗯，可能是因为发热导致的胃肠蠕动慢了。也胀气导致的。",
+                "dialogue_act": "Inform-Etiology",
+                "BIO_label": "O O O O O O O B-Symptom I-Symptom O O O O O O O O O O O B-Symptom I-Symptom O O O O",
+                "symptom_norm": [
+                    "发热",
+                    "肠管胀气"
+                ],
+                "symptom_type": [
+                    "1",
+                    "1"
+                ],
+                "local_implicit_info": {
+                    "发热": "1",
+                    "肠管胀气": "1"
+                }
+            },
+            {
+                "sentence_id": "68",
+                "speaker": "患者",
+                "sentence": "好的我照顾孩子了。谢谢",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O O O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "69",
+                "speaker": "医生",
+                "sentence": "好的。就这些症状可以吃吗丁啉。",
+                "dialogue_act": "Inform-Drug_Recommendation",
+                "BIO_label": "O O O O O O O O O O O B-Drug I-Drug I-Drug O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            },
+            {
+                "sentence_id": "70",
+                "speaker": "患者",
+                "sentence": "好谢谢医生",
+                "dialogue_act": "Other",
+                "BIO_label": "O O O O O",
+                "symptom_norm": [],
+                "symptom_type": [],
+                "local_implicit_info": {}
+            }
+        ],
+        "report": [
+            {
+                "主诉": "发烧咳嗽，食欲不振，呕吐，肚子疼。",
+                "现病史": "患儿7天前发烧咳嗽，体温38.5℃，食欲不振，阵发性肚子疼。现服用美林、百蕊颗粒和利巴韦林。",
+                "辅助检查": "血常规。",
+                "既往史": "不详。",
+                "诊断": "病毒性感染引起的发热咳嗽。",
+                "建议": "吗丁啉，维生素，饮食清淡，血常规检查。"
+            },
+            {
+                "主诉": "发热一周。",
+                "现病史": "患儿7天前出现发热，最高39℃，自服美林、百蕊颗粒、利巴韦林，效果可，2天前出现腹痛，脐周痛，呕吐，食欲差。",
+                "辅助检查": "血常规。",
+                "既往史": "不详。",
+                "诊断": "上呼吸道感染。",
+                "建议": "继续当前治疗方案，复查血常规，监测体温，清淡饮食。"
+            }
+        ],
+        "implicit_info": {
+            "Symptom": {
+                "发热": "1",
+                "低热": "1",
+                "高热": "1",
+                "腹痛": "1",
+                "呕吐": "1",
+                "咳嗽": "1",
+                "中等度热": "1",
+                "出汗": "2",
+                "大便干燥": "1",
+                "病毒感染": "1",
+                "食欲不振": "1",
+                "胃肠道炎症": "0",
+                "屁": "1",
+                "肠管胀气": "1"
+            }
+        }
+    }
