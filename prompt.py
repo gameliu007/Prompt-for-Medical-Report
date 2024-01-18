@@ -210,8 +210,8 @@ with open(json_file,encoding="utf-8") as f:
             ls_dialogue_str = ls_dialogue_str + ' ' + ' '.join(i)
             
         ls_return = ''
-        # ls_return = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)            # simple type
-        ls_return = get_summary_prompt_T(ls_dialogue_str, 0.1, 0.1)              # technical type
+        # ls_return = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)            # simple type       #temperature=0.1, top_p=0.1
+        ls_return = get_summary_prompt_T(ls_dialogue_str, 0.1, 0.1)              # technical type    #temperature=0.1, top_p=0.1
         
         ls_temp = []
         ls_temp.append('highlight')
@@ -220,7 +220,7 @@ with open(json_file,encoding="utf-8") as f:
         # time.sleep(1)
 
         # ls_summary1 = []
-        # ls_cc = get_summary(ls_dialogue_str, 0.7, 1.0)
+        # ls_cc = get_summary(ls_dialogue_str, 0.7, 1.0)                         #temperature=0.7, top_p=1.0
         #
         # ls_temp = []
         # ls_temp.append('highlight')
@@ -230,7 +230,7 @@ with open(json_file,encoding="utf-8") as f:
         #
         # #  # #
         # ls_summary2 = []
-        # ls_cc = get_summary(ls_dialogue_str, 1.0, 0.1)
+        # ls_cc = get_summary(ls_dialogue_str, 1.0, 0.1)                           #temperature=1.0, top_p=0.1
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
@@ -238,7 +238,7 @@ with open(json_file,encoding="utf-8") as f:
         # time.sleep(3)
         # #
         # ls_summary3 = []
-        # ls_cc = get_summary(ls_dialogue_str, 0.1, 1.0)
+        # ls_cc = get_summary(ls_dialogue_str, 0.1, 1.0)                            #temperature=0.1, top_p=1.0
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
@@ -247,7 +247,7 @@ with open(json_file,encoding="utf-8") as f:
         #
         # #
         # ls_summary4 = []
-        # ls_cc = get_summary(ls_dialogue_str, 0.5, 0.5)
+        # ls_cc = get_summary(ls_dialogue_str, 0.5, 0.5)                            #temperature=0.5, top_p=0.5
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
@@ -256,7 +256,7 @@ with open(json_file,encoding="utf-8") as f:
         #
         # #
         # ls_summary5 = []
-        # ls_cc = get_summary(ls_dialogue_str, 0.7, 0.1)
+        # ls_cc = get_summary(ls_dialogue_str, 0.7, 0.1)                             #temperature=0.7, top_p=0.1
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
@@ -265,7 +265,7 @@ with open(json_file,encoding="utf-8") as f:
         #
         # #
         # ls_summary6 = []
-        # ls_cc = get_summary(ls_dialogue_str, 0.1, 0.1)
+        # ls_cc = get_summary(ls_dialogue_str, 0.1, 0.1)                              #temperature=0.1, top_p=0.1
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
