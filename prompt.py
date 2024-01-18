@@ -69,6 +69,7 @@ def get_summary_prompt_S(ls_dialog, temp=0.1,top1=0.1):  # Simple Type
 
 def write_result_in_file(write_path, write_content):
     print("开始生成文件，请稍候-------------------------------------------")
+    print("Starting to read the file, please wait-------------------------------------------")
     ll_count = len(write_content)
     ll_num = 0
 
@@ -129,7 +130,7 @@ def write_result_in_file(write_path, write_content):
             # print(str((ll_num/ll_count)*100) +'%')
 
 
-# 由于文件中有多行，直接读取会出现错误，因此一行一行读取
+
 from pathlib import Path
 
 # json_file = './data/IMCS-V2_train.json'
@@ -146,6 +147,8 @@ ll_num_1 = 0
 ll_num_1 = len(all_json_file)+1
 
 print("开始读取文件，请稍候-------------------------------------------")
+print("Starting to read the file, please wait-------------------------------------------")
+
 with open(json_file,encoding="utf-8") as f:
 
     dic = json.load(f)
@@ -159,7 +162,7 @@ with open(json_file,encoding="utf-8") as f:
         ls_summary0 = []
         ls_utterance = []
 
-        ls_content = dic[key]           #开始解析详细数据
+        ls_content = dic[key]           #开始解析详细数据 Start parsing detailed data
 
 
         ll_num = ll_num + 1
@@ -229,7 +232,7 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary1.append(ls_temp)                      #SUM2
+        # ls_summary1.append(ls_temp)                       
         # time.sleep(3)
         #
         # #  # #
@@ -238,7 +241,7 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary2.append(ls_temp)  # SUM3
+        # ls_summary2.append(ls_temp)   
         # time.sleep(3)
         # #
         # ls_summary3 = []
@@ -246,7 +249,7 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary3.append(ls_temp)  # SUM3
+        # ls_summary3.append(ls_temp)  
         # time.sleep(3)
         #
         # #
@@ -255,7 +258,7 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary4.append(ls_temp)  # SUM3
+        # ls_summary4.append(ls_temp)  
         # time.sleep(3)
         #
         # #
@@ -264,7 +267,7 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary5.append(ls_temp)  # SUM3
+        # ls_summary5.append(ls_temp)   
         # time.sleep(3)
         #
         # #
@@ -273,14 +276,14 @@ with open(json_file,encoding="utf-8") as f:
         # ls_temp = []
         # ls_temp.append('highlight')
         # ls_temp.append(ls_cc)
-        # ls_summary6.append(ls_temp)  # SUM3
+        # ls_summary6.append(ls_temp)   
         # time.sleep(3)
 
 
         ls_temp = []
         ls_temp.append(ls_utterance)
         ls_temp.append(ls_summary0)        # orginal summary in dialog
-        ls_temp.append(ls_summary)         # summary generation by chatgpt  SUM1+SUM2+sum3
+        ls_temp.append(ls_summary)         # summary generation by chatgpt   
         # ls_temp.append(ls_summary1)
         # ls_temp.append(ls_summary2)
         # ls_temp.append(ls_summary3)
