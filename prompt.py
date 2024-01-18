@@ -1,5 +1,4 @@
 import json
-# from rouge import Rouge
 import time
 import openai
 import os
@@ -211,7 +210,7 @@ with open(json_file,encoding="utf-8") as f:
             ls_dialogue_str = ls_dialogue_str + ' ' + ' '.join(i)
             
         ls_return = ''
-        # ls_return = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)           # simple type
+        # ls_return = get_summary_prompt_S(ls_dialogue_str, 0.1, 0.1)            # simple type
         ls_return = get_summary_prompt_T(ls_dialogue_str, 0.1, 0.1)              # technical type
         
         ls_temp = []
