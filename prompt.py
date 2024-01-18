@@ -21,32 +21,33 @@ def get_completion(prompt, model="gpt-3.5-turbo",temperature=1.0,top_p=1.0): # A
     )
     return response.choices[0].message["content"]
 
+ls_symptom = "发热、咳嗽、喉咙痛、流鼻涕、腹痛、腹泻、喷嚏呕吐、拉肚子、肚子疼、疲倦、乏力等。"                    # Fever, cough, sore throat, runny nose, abdominal pain, diarrhea, sneezing, vomiting, loose stools, stomach pain, fatigue, fatigue, etc.                                       
+ls_pre_history="当前的症状、发生部位、发生时间、频率、持续时间、严重程度、伴随症状、药物治疗等。"                  # Current symptoms, location, time of occurrence, frequency, duration, severity, concomitant symptoms, medication, etc.  
+ls_aux_test = "血常规、尿常规、粪便常规、支原体、肝功能、肾功能、凝血功能、血型鉴定、X射线、CT扫描、MRI、超声波等。" # Complete blood count (cbc), urinalysis, stool routine, chlamydia test, liver function test (lft), kidney function test (kft), coagulation profile, blood typing, x-ray, ct Scan, mri, ultrasound, etc.                                                         
 
-ls_diagnosis = "小儿支气管炎、小儿发热、小儿腹泻、上呼吸道感染、小儿消化不良、小儿感冒、小儿咳嗽、新生儿黄疸、小儿便秘、小儿支气管肺炎等。"
-
-ls_aux_test = "血常规、尿常规、粪便常规、支原体、肝功能、肾功能、凝血功能、血型鉴定、X射线、CT扫描、MRI、超声波等。"
-
-ls_pre_history="当前的症状、发生部位、发生时间、频率、持续时间、严重程度、伴随症状、药物治疗等。"
-
-ls_past_history= """
+ls_past_history= """                                                       #Previous medical history: Diseases that the patient had ever had, such as high blood pressure, diabetes, asthma, etc. Surgical history: The surgery the patient has undergone, including the type, timing, and outcome of the surgery. Drug allergy history: A condition in which the patient has an allergic reaction to certain drugs or substances, such as penicillin allergy. Family history: Whether the patient's family members have a genetic predisposition to certain diseases or conditions, such as high blood pressure, diabetes, heart disease, etc.
 既往病史：患者曾经患过的疾病，如高血压、糖尿病、哮喘等。
 手术史：患者曾经接受过的手术，包括手术的种类、时间和结果等。
 药物过敏史：患者对某些药物或物质存在过敏反应的情况，如青霉素过敏等。
 家族病史：患者的家族成员是否有某些疾病的遗传倾向或患病情况，如高血压、糖尿病、心脏病等。
 """
+ls_diagnosis = "小儿支气管炎、小儿发热、小儿腹泻、上呼吸道感染、小儿消化不良、小儿感冒、小儿咳嗽、新生儿黄疸、小儿便秘、小儿支气管肺炎等。"  #Pediatric bronchitis, pediatric fever, pediatric diarrhea, upper respiratory infection, pediatric indigestion, pediatric common cold, pediatric cough,neonatal jaundice, pediatric constipation, pediatric bronchopneumonia, etc.             
 
-ls_symptom = "发热、咳嗽、喉咙痛、流鼻涕、腹痛、腹泻、喷嚏呕吐、拉肚子、肚子疼、疲倦、乏力等。"
+
+
+
+
 
 
 def get_summary_prompt_T(ls_dialog, temp=0.1,top1=1.0):     # Techical Type
     prompt = f"""
-    任务:根据医患对话{ls_dialog}生成一段简短的医学摘要，包含以下六个部分：
-    主诉:不超过20字，包括以症状{ls_symptom}为例，根据医患对话生成症状，症状天数。
-    现病史:不超过80字，生成相关的现病史,以{ls_pre_history}为例。
-    辅助检查:生成最相关的医学检查名称,以{ls_aux_test}为例。
-    既往史:不超过50字，生成相关的既往史,以{ls_past_history}为例。
-    诊断:生成一个最相关的诊断名称,以{ls_diagnosis}为例。
-    建议:不超过80字,生成所有建议。
+    任务:根据医患对话{ls_dialog}生成一段简短的医学摘要，包含以下六个部分：               # Generate a short medical summary based on the doctor-patient conversation {ls_dialog} with the following six parts:
+    主诉:不超过20字，包括以症状{ls_symptom}为例，根据医患对话生成症状，症状天数。        # Chief complaint: Not exceeding 20 words, including the symptom {ls_symptom} as an example, according to the doctor-patient dialogue to generate symptoms, symptoms of the number of days. 
+    现病史:不超过80字，生成相关的现病史,以{ls_pre_history}为例。                       # Present medical history: Not exceeding 80 words, generate related history of disease, {ls_pre_history} as an example.
+    辅助检查:生成最相关的医学检查名称,以{ls_aux_test}为例。                            # Auxiliary examination: Generate the most relevant medical examination name, using {ls_aux_test} as an example.
+    既往史:不超过50字，生成相关的既往史,以{ls_past_history}为例。                      # Past medical history: Not exceeding 50 characters to generate the relevant Past medical history, for example, {ls_past_history}.
+    诊断:生成一个最相关的诊断名称,以{ls_diagnosis}为例。                               # Diagnostics: Generates the most relevant diagnosis name, for example, {ls_diagnosis}.
+    建议:不超过80字,生成所有建议。                                                    # Recommendation: Not exceeding 80 words, generate all recommendations.
     """
     response = get_completion(prompt,temperature=temp,top_p=top1)
     return response
@@ -54,14 +55,14 @@ def get_summary_prompt_T(ls_dialog, temp=0.1,top1=1.0):     # Techical Type
 
 def get_summary_prompt_S(ls_dialog, temp=0.1,top1=0.1):  # Simple Type
     prompt = f"""
-    1.根据医疗对话{ls_dialog}生成一段简短的医学摘要.
-    2.包含以下六个部分：
-    主诉:
-    现病史:
-    辅助检查:医学检查项目名称
-    既往史:
-    诊断:最相关的诊断名称
-    建议:
+    1.根据医疗对话{ls_dialog}生成一段简短的医学摘要.           # 1.Generate a short medical summary based on the medical dialogue{ls_dialog}.
+    2.包含以下六个部分：                                      # 2.Contains the following six parts:
+    主诉:                                                    # Chief complaint: 
+    现病史:                                                  # Present medical history: 
+    辅助检查:医学检查项目名称                                  # Auxiliary examination: Medical examination names
+    既往史:                                                  # Past medical history: 
+    诊断:最相关的诊断名称                                     # Diagnostics: The most relevant diagnostic name
+    建议:                                                    # Recommendation: 
     """
     response = get_completion(prompt,temperature=temp,top_p=top1)
     return response
